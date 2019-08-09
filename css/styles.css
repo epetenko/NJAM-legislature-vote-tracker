@@ -1,0 +1,155 @@
+body { font-family: 'Open Sans', sans-serif; padding-right: 0px; padding-left: 0px; height: auto; }
+table { font-family: 'Open Sans', sans-serif; font-size: 12px; float: left; }
+.table th,
+.table td { text-align: left; }
+table.display td {
+	padding: 10px 10px;
+	/*background-color: white;*/
+}
+tr.odd {
+	/*background-color: white;*/
+
+}
+a {color: #5776D4;
+	text-decoration: underline;
+
+}
+.table th { font-size: 12px; background-color: #FAFAFA; }
+.table thead th { vertical-align: middle; cursor: pointer; }
+
+label, input, button, select, textarea { line-height: 30px }
+input, textarea, select, .uneditable-input { height: 25px; line-height: 25px; }
+select { width: 75px }
+.dataTables_length { padding-left: 10px }
+.dataTables_filter { padding-right: 10px }
+td.left.sorting_1 { 
+
+	background-color: rgba(87, 118, 212, 0.2);
+	
+   filter: alpha(opacity=20);
+   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+   -moz-opacity: 0.20;
+
+}
+
+.table tbody>tr:nth-child(odd)>th>td.sorting_1 { background-color: rgba(87, 118, 212, 0.1); }
+
+/* 
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media 
+	only screen and (max-width: 480px),
+	(min-device-width: 480px) and (max-device-width: 1024px)  {
+	
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+
+		h1 {
+			font-size: 25px;
+			line-height: 1.2;
+		}
+
+		p {
+			font-size: 13px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+
+		body { padding-right: 0px !important; padding-left: 0px !important; margin: 0; }
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		.pagination {
+			width: 100%;
+			font-size: 11px;
+			margin: 0;
+		}
+
+		.form-search label, .form-inline label, .form-search .btn-group, .form-inline .btn-group {
+			font-size: 13px;
+		}
+
+		input, textarea, .uneditable-input {
+			width: 70%;
+			display: block;
+			margin-left: 5px;
+		}
+
+		.dataTables_info {
+			width: 100%;
+			float: left;
+			padding: 10px 0;
+		}
+
+
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+			padding-top: 20%;
+			text-align: right;
+			height: 70%;  
+		}
+
+		table.display td.center {
+			text-align: right;
+		}
+
+		table.display td {
+			padding: 30px 10px 3px 10px;
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%;  
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+		
+		/*
+		Label the data
+		*/
+		td:nth-of-type(1):before { content: "County"; font-weight: bold; text-align:left; }
+		td:nth-of-type(2):before { content: "District"; font-weight: bold; text-align:left; }
+		td:nth-of-type(3):before { content: "FY 2018 aid under Christie"; font-weight: bold; text-align:left; }
+		td:nth-of-type(4):before { content: "Change under Dem proposal"; font-weight: bold; text-align:left; }
+		td:nth-of-type(5):before { content: "Percent Change"; font-weight: bold; text-align:left; }
+		td:nth-of-type(6):before { content: "Aid under Dem proposal"; font-weight: bold; text-align:left; }
+
+
+	}
+	
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body { 
+			padding: 0; 
+			margin: 0; 
+			width: 320px; }
+		}
+	
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body { 
+			width: 495px; 
+		}
+	}
